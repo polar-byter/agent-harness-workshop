@@ -1,31 +1,22 @@
-import json
-import hashlib
 from pathlib import Path
-from notes import find_notes, find_notes_alt, read_notes
-from assistant import build_messages, extract_answer, answer_question
-from transport import send_fixture
-from agent import dispatch_tool, run_agent, decide_fixture
-from control import check_budget, select_context, save_events, evaluate_cases, run_controlled
+from agent import dispatch_tool
+from control import check_budget, run_controlled, save_events, evaluate_cases
+from decisions import decide_live
 
 ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    print('Учебный запуск без обращения к модели через сеть.')
-    try:
-        cases = [{'name':'Ответ','task':'Найди Python','expected_status':'completed','expected_answer':'Готово'},
-                 {'name':'Остановка','task':'Повторяй','expected_status':'budget_limit','expected_answer':''}]
-        def run(task):
-            if task == 'Повторяй':
-                repeat = lambda task, events: {'type':'tool','tool':'read_notes'}
-                return run_controlled(task, ROOT/'data'/'notes.txt', repeat, {'steps':3,'tool_calls':2})
-            return run_controlled(task, ROOT/'data'/'notes.txt', lambda task, events: {'type':'answer','text':'Готово'}, {'steps':3,'tool_calls':2})
-        result = evaluate_cases(cases, run)
-    except NotImplementedError as error:
-        print(error)
-    else:
-        print(result)
+    cases = [
+        {'name': 'python', 'task': 'Найди заметки о Python. Если они найдены, ответь только found.',
+         'expected_status': 'completed', 'expected_answer': 'found'},
+        {'name': 'missing', 'task': 'Найди заметки по строке zzz_not_in_notes. Если совпадений нет, ответь только missing.',
+         'expected_status': 'completed', 'expected_answer': 'missing'},
+    ]
+    def run(task):
+        return run_controlled(task, ROOT / 'data' / 'notes.txt', decide_live, {'steps': 4, 'tool_calls': 3})
+    print(evaluate_cases(cases, run))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

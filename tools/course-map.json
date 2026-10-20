@@ -75,6 +75,10 @@
       "path": "course/02-note-assistant/03-answer.md"
     },
     {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/04. Подключаем настоящую модель.md",
+      "path": "course/02-note-assistant/04-connect.md"
+    },
+    {
       "source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/01. Выполняем команду поиска.md",
       "path": "course/03-tool-agent/01-tools.md"
     },
@@ -224,6 +228,17 @@
         ]
       ],
       "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-03-answer.zip"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/04. Подключаем настоящую модель.md",
+      "path": "course/02-note-assistant/04-connect.md",
+      "group": 2,
+      "number": 4,
+      "root": "lesson-02-04-connect",
+      "title": "Подключаем настоящую модель",
+      "targets": [],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-04-connect.zip",
+      "ready": true
     },
     {
       "group": 3,

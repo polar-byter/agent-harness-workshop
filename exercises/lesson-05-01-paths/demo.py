@@ -1,25 +1,17 @@
-import json
-import hashlib
 from pathlib import Path
-from notes import find_notes, find_notes_alt, read_notes
-from assistant import build_messages, extract_answer, answer_question
-from transport import send_fixture
-from agent import dispatch_tool, run_agent, decide_fixture
-from workspace import workspace_path, preview_change, apply_change, check_project, prepare_coding_task
-from coding_model import propose_fixture
+from workspace import workspace_path, prepare_coding_task, apply_change, check_project
+from coding_model import propose_live
 
 ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    print('Учебный запуск без обращения к модели через сеть.')
-    try:
-        result = workspace_path(ROOT / 'workspace', 'prices.py').relative_to(ROOT).as_posix()
-    except NotImplementedError as error:
-        print(error)
-    else:
-        print(result)
+    path = workspace_path(ROOT / 'workspace', 'prices.py')
+    print('Разрешённый файл:', path.relative_to(ROOT))
+    suggestion = propose_live('Исправь расчёт общей цены', path.read_text(encoding='utf-8'))
+    print('Предложение модели, без записи в файл:')
+    print(suggestion)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

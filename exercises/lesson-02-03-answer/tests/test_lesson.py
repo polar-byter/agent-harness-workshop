@@ -17,6 +17,7 @@ class LessonTests(unittest.TestCase):
             calls.append(messages)
             return {'status':'completed', 'output':[{'type':'message','content':[{'type':'output_text','text':'Ответ'}]}]}
         self.assertEqual(answer_question('Вопрос', ['Заметка'], fake_send), 'Ответ')
+        self.assertEqual(calls[0], build_messages('Вопрос', ['Заметка']))
         self.assertEqual(len(calls), 1)
         self.assertEqual(answer_question('Вопрос', [], fake_send), 'Подходящих заметок нет.')
         self.assertEqual(len(calls), 1)

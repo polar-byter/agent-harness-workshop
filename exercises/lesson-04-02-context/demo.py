@@ -1,24 +1,16 @@
-import json
-import hashlib
 from pathlib import Path
-from notes import find_notes, find_notes_alt, read_notes
-from assistant import build_messages, extract_answer, answer_question
-from transport import send_fixture
-from agent import dispatch_tool, run_agent, decide_fixture
-from control import check_budget, select_context, save_events, evaluate_cases, run_controlled
+from agent import dispatch_tool
+from control import check_budget, run_controlled, save_events, evaluate_cases
+from decisions import decide_live
 
 ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    print('Учебный запуск без обращения к модели через сеть.')
-    try:
-        result = select_context('Найди Python', [{'step':1},{'step':2},{'step':3}], 2)
-    except NotImplementedError as error:
-        print(error)
-    else:
-        print(result)
+    result = run_controlled('Найди заметки о Python', ROOT / 'data' / 'notes.txt',
+                            decide_live, {'steps': 4, 'tool_calls': 3})
+    print(result)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

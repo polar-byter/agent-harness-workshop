@@ -13,7 +13,11 @@ def propose_live(task, old_text):
          'Не меняй имя и параметры функции. Не добавляй внешние действия.'},
         {'role': 'user', 'content': json.dumps({'task': task, 'file': old_text}, ensure_ascii=False)},
     ])
-    result = json.loads(extract_answer(response))
+    text = extract_answer(response)
+    try:
+        result = json.loads(text)
+    except json.JSONDecodeError:
+        raise ValueError('Модель вернула текст вместо предложения JSON: ' + text[:400]) from None
     if not isinstance(result, dict) or not isinstance(result.get('new_text'), str):
         raise ValueError('Нет текста исправленного файла')
     return result['new_text']

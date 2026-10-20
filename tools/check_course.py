@@ -64,14 +64,23 @@ def main():
             copy=Path(folder).resolve()
             assert copy.is_relative_to(scratch.resolve())
             shutil.copytree(exercise,copy,dirs_exist_ok=True)
-            result=subprocess.run([sys.executable,'-B','-c','import demo; demo.main()'],cwd=copy,
+            demo = 'demo_check' if (copy/'demo_check.py').is_file() else 'demo'
+            result=subprocess.run([sys.executable,'-B','-c',f'import {demo}; {demo}.main()'],cwd=copy,
                 env=dict(os.environ,PYTHONIOENCODING='utf-8',PYTHONDONTWRITEBYTECODE='1'),
                 capture_output=True,text=True,encoding='utf-8',timeout=15)
             assert result.returncode==0,(lesson['root'],result.stdout,result.stderr)
-            assert 'Допишите' in result.stdout,(lesson['root'],result.stdout)
+            expected = 'Списки Python сохраняют порядок элементов.' if lesson.get('ready') else 'Допишите'
+            assert expected in result.stdout,(lesson['root'],result.stdout)
+        if lesson['group'] >= 3 or lesson.get('ready'):
+            runtime=ROOT/'tools/model_runtime'
+            for filename in ('transport.py','configure_model.py'):
+                assert (exercise/filename).read_bytes()==(runtime/filename).read_bytes(),(lesson['root'],filename)
+            demo_source=(exercise/'demo.py').read_text(encoding='utf-8')
+            assert not any(name in demo_source for name in ('send_fixture','decide_fixture','propose_fixture')),lesson['root']
         print(lesson['root']+': starter and archive OK')
     print(f'Checked {len(config["documents"])} course pages, {links} local links, {python_files} Python files and {len(config["lessons"])} starters.')
     print('These checks validate course packaging; unfinished learner functions are expected. No model API calls were made.')
+    subprocess.run([sys.executable,'-B',str(ROOT/'tools/test_model_runtime.py')],check=True)
 
 
 if __name__=='__main__':
