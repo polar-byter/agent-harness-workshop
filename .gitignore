@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.py[cod]
+.idea/
+.vscode/
+.checks/
+scratch/
+*.jsonl
+.env
+.env.*
+!.env.example
+local-practice/
+maintainer/local/
+

@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "output": [
+    {
+      "type": "message",
+      "role": "assistant",
+      "content": [
+        {
+          "type": "output_text",
+          "text": "Списки Python сохраняют порядок элементов."
+        }
+      ]
+    }
+  ]
+}

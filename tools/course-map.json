@@ -1,0 +1,375 @@
+{
+  "groups": [
+    {
+      "source": "01. Поиск по заметкам",
+      "path": "01-note-search"
+    },
+    {
+      "source": "02. Ответ с моделью",
+      "path": "02-note-assistant"
+    },
+    {
+      "source": "03. Агент с инструментами",
+      "path": "03-tool-agent"
+    },
+    {
+      "source": "04. Управление выполнением",
+      "path": "04-run-control"
+    },
+    {
+      "source": "05. Кодирующий агент",
+      "path": "05-coding-harness"
+    }
+  ],
+  "documents": [
+    {
+      "source": "Agent Harness Workshop/Уроки/00. С чего начать.md",
+      "path": "course/00-introduction.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Все уроки и каркасы.md",
+      "path": "course/README.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Как найти файл и запустить пример.md",
+      "path": "course/pycharm.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/00. Открываем проект.md",
+      "path": "course/01-note-search/00-setup.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/Дополнительно. Готовые проверки поиска.md",
+      "path": "course/01-note-search/extra-tests.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/01. Поисковая функция.md",
+      "path": "course/01-note-search/01-search.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/02. Читаем заметки.md",
+      "path": "course/01-note-search/02-read.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/03. Сохраняем результат поиска.md",
+      "path": "course/01-note-search/03-journal.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/04. Соединяем чтение, поиск и журнал.md",
+      "path": "course/01-note-search/04-run.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/01. Передаём вопрос вместе с заметками.md",
+      "path": "course/02-note-assistant/01-messages.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/02. Извлекаем текст из ответа сервиса.md",
+      "path": "course/02-note-assistant/02-response.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/03. Соединяем запрос и ответ.md",
+      "path": "course/02-note-assistant/03-answer.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/01. Выполняем команду поиска.md",
+      "path": "course/03-tool-agent/01-tools.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/02. Возвращаем результат модели.md",
+      "path": "course/03-tool-agent/02-cycle.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/01. Ограничиваем число действий.md",
+      "path": "course/04-run-control/01-budget.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/02. Выбираем историю для следующего шага.md",
+      "path": "course/04-run-control/02-context.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/03. Сохраняем историю выполнения.md",
+      "path": "course/04-run-control/03-trace.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/04. Сравниваем поведение на сценариях.md",
+      "path": "course/04-run-control/04-evaluation.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/01. Ограничиваем рабочую папку.md",
+      "path": "course/05-coding-harness/01-paths.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/02. Показываем предлагаемое изменение.md",
+      "path": "course/05-coding-harness/02-diff.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/03. Применяем согласованное предложение.md",
+      "path": "course/05-coding-harness/03-apply.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/04. Проверяем изменённый проект.md",
+      "path": "course/05-coding-harness/04-verify.md"
+    }
+  ],
+  "lessons": [
+    {
+      "group": 1,
+      "number": 1,
+      "root": "lesson-01-01-search",
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/01. Поисковая функция.md",
+      "path": "course/01-note-search/01-search.md",
+      "title": "Поисковая функция",
+      "targets": [
+        [
+          "notes.py",
+          "find_notes"
+        ],
+        [
+          "notes.py",
+          "find_notes_alt"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/Материалы/lesson-01-01-search.zip"
+    },
+    {
+      "group": 1,
+      "number": 2,
+      "root": "lesson-01-02-read",
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/02. Читаем заметки.md",
+      "path": "course/01-note-search/02-read.md",
+      "title": "Читаем заметки",
+      "targets": [
+        [
+          "notes.py",
+          "read_notes"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/Материалы/lesson-01-02-read.zip"
+    },
+    {
+      "group": 1,
+      "number": 3,
+      "root": "lesson-01-03-journal",
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/03. Сохраняем результат поиска.md",
+      "path": "course/01-note-search/03-journal.md",
+      "title": "Сохраняем результат поиска",
+      "targets": [
+        [
+          "journal.py",
+          "write_result"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/Материалы/lesson-01-03-journal.zip"
+    },
+    {
+      "group": 1,
+      "number": 4,
+      "root": "lesson-01-04-run",
+      "source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/04. Соединяем чтение, поиск и журнал.md",
+      "path": "course/01-note-search/04-run.md",
+      "title": "Соединяем чтение, поиск и журнал",
+      "targets": [
+        [
+          "app.py",
+          "run_search"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/01. Поиск по заметкам/Материалы/lesson-01-04-run.zip"
+    },
+    {
+      "group": 2,
+      "number": 1,
+      "root": "lesson-02-01-messages",
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/01. Передаём вопрос вместе с заметками.md",
+      "path": "course/02-note-assistant/01-messages.md",
+      "title": "Передаём вопрос вместе с заметками",
+      "targets": [
+        [
+          "assistant.py",
+          "build_messages"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-01-messages.zip"
+    },
+    {
+      "group": 2,
+      "number": 2,
+      "root": "lesson-02-02-response",
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/02. Извлекаем текст из ответа сервиса.md",
+      "path": "course/02-note-assistant/02-response.md",
+      "title": "Извлекаем текст из ответа сервиса",
+      "targets": [
+        [
+          "assistant.py",
+          "extract_answer"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-02-response.zip"
+    },
+    {
+      "group": 2,
+      "number": 3,
+      "root": "lesson-02-03-answer",
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/03. Соединяем запрос и ответ.md",
+      "path": "course/02-note-assistant/03-answer.md",
+      "title": "Соединяем запрос и ответ",
+      "targets": [
+        [
+          "assistant.py",
+          "answer_question"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-03-answer.zip"
+    },
+    {
+      "group": 3,
+      "number": 1,
+      "root": "lesson-03-01-tools",
+      "source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/01. Выполняем команду поиска.md",
+      "path": "course/03-tool-agent/01-tools.md",
+      "title": "Выполняем команду поиска",
+      "targets": [
+        [
+          "agent.py",
+          "dispatch_tool"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/Материалы/lesson-03-01-tools.zip"
+    },
+    {
+      "group": 3,
+      "number": 2,
+      "root": "lesson-03-02-cycle",
+      "source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/02. Возвращаем результат модели.md",
+      "path": "course/03-tool-agent/02-cycle.md",
+      "title": "Возвращаем результат модели",
+      "targets": [
+        [
+          "agent.py",
+          "run_agent"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/03. Агент с инструментами/Материалы/lesson-03-02-cycle.zip"
+    },
+    {
+      "group": 4,
+      "number": 1,
+      "root": "lesson-04-01-budget",
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/01. Ограничиваем число действий.md",
+      "path": "course/04-run-control/01-budget.md",
+      "title": "Ограничиваем число действий",
+      "targets": [
+        [
+          "control.py",
+          "check_budget"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/04. Управление выполнением/Материалы/lesson-04-01-budget.zip"
+    },
+    {
+      "group": 4,
+      "number": 2,
+      "root": "lesson-04-02-context",
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/02. Выбираем историю для следующего шага.md",
+      "path": "course/04-run-control/02-context.md",
+      "title": "Выбираем историю для следующего шага",
+      "targets": [
+        [
+          "control.py",
+          "select_context"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/04. Управление выполнением/Материалы/lesson-04-02-context.zip"
+    },
+    {
+      "group": 4,
+      "number": 3,
+      "root": "lesson-04-03-trace",
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/03. Сохраняем историю выполнения.md",
+      "path": "course/04-run-control/03-trace.md",
+      "title": "Сохраняем историю выполнения",
+      "targets": [
+        [
+          "control.py",
+          "save_events"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/04. Управление выполнением/Материалы/lesson-04-03-trace.zip"
+    },
+    {
+      "group": 4,
+      "number": 4,
+      "root": "lesson-04-04-evaluation",
+      "source": "Agent Harness Workshop/Уроки/04. Управление выполнением/04. Сравниваем поведение на сценариях.md",
+      "path": "course/04-run-control/04-evaluation.md",
+      "title": "Сравниваем поведение на сценариях",
+      "targets": [
+        [
+          "control.py",
+          "evaluate_cases"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/04. Управление выполнением/Материалы/lesson-04-04-evaluation.zip"
+    },
+    {
+      "group": 5,
+      "number": 1,
+      "root": "lesson-05-01-paths",
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/01. Ограничиваем рабочую папку.md",
+      "path": "course/05-coding-harness/01-paths.md",
+      "title": "Ограничиваем рабочую папку",
+      "targets": [
+        [
+          "workspace.py",
+          "workspace_path"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/Материалы/lesson-05-01-paths.zip"
+    },
+    {
+      "group": 5,
+      "number": 2,
+      "root": "lesson-05-02-diff",
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/02. Показываем предлагаемое изменение.md",
+      "path": "course/05-coding-harness/02-diff.md",
+      "title": "Показываем предлагаемое изменение",
+      "targets": [
+        [
+          "workspace.py",
+          "preview_change"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/Материалы/lesson-05-02-diff.zip"
+    },
+    {
+      "group": 5,
+      "number": 3,
+      "root": "lesson-05-03-apply",
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/03. Применяем согласованное предложение.md",
+      "path": "course/05-coding-harness/03-apply.md",
+      "title": "Применяем согласованное предложение",
+      "targets": [
+        [
+          "workspace.py",
+          "apply_change"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/Материалы/lesson-05-03-apply.zip"
+    },
+    {
+      "group": 5,
+      "number": 4,
+      "root": "lesson-05-04-verify",
+      "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/04. Проверяем изменённый проект.md",
+      "path": "course/05-coding-harness/04-verify.md",
+      "title": "Проверяем изменённый проект",
+      "targets": [
+        [
+          "workspace.py",
+          "check_project"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/Материалы/lesson-05-04-verify.zip"
+    }
+  ]
+}

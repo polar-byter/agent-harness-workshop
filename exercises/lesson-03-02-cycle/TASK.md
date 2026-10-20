@@ -1,0 +1,30 @@
+# Подсказки к текущему заданию
+
+- `agent.py` → `run_agent`
+
+Сначала разберём, что меняется между двумя шагами. На первом `events` пуст: учебная функция `decide` просит поиск. Наш код выполняет его и добавляет результат в историю. На следующем шаге `decide` получает уже эту историю и может вернуть ответ. Если мы забудем добавить событие, решающая функция не узнает, что поиск состоялся.
+
+В файле текущего задания уже есть начало функции. Допишите её по заготовке ниже: `...` обозначает место для вашего выражения, а не готовую команду. Когда заполните пропуски, удалите строку `raise NotImplementedError(...)` из каркаса. Заголовок `def` в файле уже есть — вторую функцию с тем же именем создавать не нужно.
+
+```python
+def run_agent(task: str, notes_path: Path, decide, max_steps: int = 4) -> dict:
+    if max_steps < 1:
+        raise ValueError('Нужен хотя бы один шаг')
+    events = []
+    for step in range(max_steps):
+        command = decide(task, events)
+        if command.get('type') == 'answer':
+            text = command.get('text')
+            if not isinstance(text, str) or not text.strip():
+                raise ValueError('Пустой ответ')
+            return {'status': 'completed', 'answer': text, 'events': events}
+        if command.get('type') != 'tool':
+            raise ValueError('Ожидался ответ или запрос инструмента')
+        result = ...
+        events.append({'command': ..., 'result': ...})
+    return {'status': 'step_limit', 'answer': '', 'events': events}
+```
+
+В `result` сохраните `dispatch_tool(command, notes_path)`. В событие положите переменные `command` и `result`: так следующий вызов `decide(task, events)` получит и запрос операции, и найденные данные.
+
+`range(max_steps)` ограничивает количество повторений. При `max_steps=4` цикл сможет четыре раза запросить следующее действие. `return` внутри ветки `answer` завершает всю функцию сразу. Последний `return` расположен после цикла: он выполняется только тогда, когда шаги закончились без окончательного ответа. Проверки типов команд уже показаны в заготовке, чтобы вы могли сосредоточиться на обмене данными.
