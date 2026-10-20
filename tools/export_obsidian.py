@@ -16,6 +16,13 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
+def plain_punctuation(text):
+    substitutions={'\u2014':'-','\u2013':'-','\u2192':'->','\u2190':'<-','\u2026':'...','\u00b7':'/','\u00a0':' '}
+    for old,new in substitutions.items():
+        text=text.replace(old,new)
+    return text
+
+
 def relative_link(source, target):
     return quote(os.path.relpath(target, source.parent).replace('\\', '/'), safe='/.-_')
 
@@ -50,6 +57,8 @@ def main():
     def stage(relative,data):
         if Path(relative).suffix in ('.md','.py','.json','.txt','.toml') or Path(relative).name=='.gitignore':
             data=data.replace(b'\r\n',b'\n')
+        if Path(relative).suffix=='.md':
+            data=plain_punctuation(data.decode('utf-8')).encode('utf-8')
         target=ROOT/relative
         if target.exists():
             current=target.read_bytes()
@@ -82,7 +91,7 @@ def main():
                 url+='?raw=true'
             return '['+(label or Path(source).stem)+']('+url+')'
         text=re.sub(r'(!?)\[\[([^]|]+)(?:\|([^]]*))?\]\]',link,text)
-        return text.strip()+'\n'
+        return plain_punctuation(text.strip())+'\n'
 
     lesson_by_source={lesson['source']:lesson for lesson in config['lessons']}
     for document in config['documents']:
