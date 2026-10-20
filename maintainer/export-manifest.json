@@ -1,7 +1,7 @@
 {
   "format": 1,
   "source": "Obsidian reader course only",
-  "documents": 22,
+  "documents": 23,
   "lessons": 17,
   "files": {
     "assets/01-note-search/function-inputs.gif": "3d2a16d76b8425cc6137cec311b56b10cd28f535bcc10af21775d0c7c1426607",
@@ -47,7 +47,7 @@
     "assets/common/agent-cycle.gif": "1b1b2fa9f59b3a32b6167d9f5e1071efeb3a64cc61579f59a237b268ba429dd6",
     "assets/common/agent-cycle.png": "6f1b1d74941d13339e2e3d32352f512b7b8c24886a5e0b977c693915094a2fa4",
     "assets/common/pycharm-run.png": "73eb321c01f060e975b3d803cf83baa67a29e99793882c8785657937331b6431",
-    "course/00-introduction.md": "814f72007d8b0f48e9df3538ba4f2f6e657df900ebe32960c3ec3c00ed2a0745",
+    "course/00-introduction.md": "d52fe500f33c47d9cdb44700e6f30b05f36c929db98efc1f475bf3400dc7f118",
     "course/01-note-search/00-setup.md": "e8c0099916f5cc0949cc664dc6389a249babe76ecd81e0abc4d97443b25eeb6a",
     "course/01-note-search/01-search.md": "803c9fc919ad553413e01230c07478bc3226fe4638a8d73891c42e3abb3a9ab7",
     "course/01-note-search/02-read.md": "4e4d254ac8346b20a75294a3b0a9b55d79c8b9f84a0baf2692715de2bd3743a8",
@@ -67,8 +67,9 @@
     "course/05-coding-harness/02-diff.md": "d18e221c2518844aaf9296a995fd20d5204ec47ee3b6b385e0bd7d94d539768b",
     "course/05-coding-harness/03-apply.md": "6173feb9968944ed03ee51629783a70452486f0a1950a7cd08c93db463fcacdc",
     "course/05-coding-harness/04-verify.md": "c945bb7db23ea1eb29284562a63a94986d5b5b5f63228f0e3be75a7561de242b",
-    "course/README.md": "6be04047d92555338449ea5c69530bfaeab9a9f2a4f38db46bfa7b1c011b95ca",
+    "course/README.md": "a5bdf1c71983b04f142c5210cc4f9f32640d97df12aa7720d6207c00eaf25fa5",
     "course/pycharm.md": "58e5d8072b4d6b24ed773b37a965f8420ab5cd18a32e2eaffffb8346272188ce",
+    "course/who-this-is-for.md": "c36b7bce9a20396b93f0a37e0e9ea48bf5a781a3a2e7cb90278bd49e338671a7",
     "downloads/lesson-01-01-search.zip": "c3e8bba1d9412bf766cdda03b6ae4ba0666eaa8cd1ba988992c4ad3502a1976a",
     "downloads/lesson-01-02-read.zip": "a09cbbe1856e43c7ecf09cacbb7ee7c45c9567735ca6dca735dbd1633d5ab348",
     "downloads/lesson-01-03-journal.zip": "7ec4e408a11d69f89a069d35b58ee51ab01ac9f0d97fc2a944f65d9ea95368ea",

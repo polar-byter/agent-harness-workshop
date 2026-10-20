@@ -23,6 +23,10 @@
   ],
   "documents": [
     {
+      "source": "Agent Harness Workshop/Уроки/Для кого эти уроки.md",
+      "path": "course/who-this-is-for.md"
+    },
+    {
       "source": "Agent Harness Workshop/Уроки/00. С чего начать.md",
       "path": "course/00-introduction.md"
     },
