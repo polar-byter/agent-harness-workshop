@@ -48,6 +48,8 @@ def main():
     pending={}
 
     def stage(relative,data):
+        if Path(relative).suffix in ('.md','.py','.json','.txt','.toml') or Path(relative).name=='.gitignore':
+            data=data.replace(b'\r\n',b'\n')
         target=ROOT/relative
         if target.exists():
             current=target.read_bytes()

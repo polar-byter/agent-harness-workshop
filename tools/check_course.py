@@ -53,7 +53,12 @@ def main():
                 if name.endswith('/') or not relative.parts:
                     continue
                 if relative.as_posix()!='README.md':
-                    assert package.read(name)==(exercise/relative).read_bytes(),(archive,relative)
+                    archived=package.read(name)
+                    unpacked=(exercise/relative).read_bytes()
+                    if relative.suffix in ('.py','.md','.json','.txt','.toml') or relative.name=='.gitignore':
+                        archived=archived.replace(b'\r\n',b'\n')
+                        unpacked=unpacked.replace(b'\r\n',b'\n')
+                    assert archived==unpacked,(archive,relative)
         # The scratch root and every temporary checkout are verified before managed cleanup.
         with tempfile.TemporaryDirectory(prefix=lesson['root']+'-',dir=scratch) as folder:
             copy=Path(folder).resolve()
