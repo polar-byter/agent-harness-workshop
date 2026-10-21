@@ -1,4 +1,4 @@
-"""Save the connection once for all course folders on this computer."""
+"""Сохраняем одно подключение для всех учебных папок на этом компьютере."""
 import json
 import tkinter as tk
 from tkinter import messagebox, ttk

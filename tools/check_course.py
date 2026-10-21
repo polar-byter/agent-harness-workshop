@@ -76,7 +76,8 @@ def main():
             assert expected in result.stdout,(lesson['root'],result.stdout)
         if lesson['group'] >= 3 or lesson.get('ready'):
             runtime=ROOT/'tools/model_runtime'
-            for filename in ('transport.py','configure_model.py'):
+            # В дополнительных уроках читатель может писать сам сетевой модуль.
+            for filename in lesson.get('runtime_modules', ('transport.py','configure_model.py')):
                 assert (exercise/filename).read_bytes()==(runtime/filename).read_bytes(),(lesson['root'],filename)
             demo_source=(exercise/'demo.py').read_text(encoding='utf-8')
             assert not any(name in demo_source for name in ('send_fixture','decide_fixture','propose_fixture')),lesson['root']

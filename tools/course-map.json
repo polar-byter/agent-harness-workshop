@@ -19,6 +19,10 @@
     {
       "source": "05. Кодирующий агент",
       "path": "05-coding-harness"
+    },
+    {
+      "source": "Дополнительно. Готовые модули",
+      "path": "extra-prepared-modules"
     }
   ],
   "documents": [
@@ -27,7 +31,7 @@
       "path": "course/who-this-is-for.md"
     },
     {
-      "source": "Agent Harness Workshop/Уроки/00. С чего начать.md",
+      "source": "Agent Harness Workshop/Уроки/00. Введение..md",
       "path": "course/00-introduction.md"
     },
     {
@@ -117,6 +121,50 @@
     {
       "source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/04. Проверяем изменённый проект.md",
       "path": "course/05-coding-harness/04-verify.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Дополнительно. Как устроена send_live.md",
+      "path": "course/02-note-assistant/extra-send-live.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Дополнительно. Посмотрим статистику запроса.md",
+      "path": "course/02-note-assistant/extra-usage.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Настройка API и локальной модели.md",
+      "path": "course/02-note-assistant/setup-connections.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Дополнительно. Запускаем модель из Python.md",
+      "path": "course/02-note-assistant/extra-local.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/01. Как подготовить задачу для модели.md",
+      "path": "course/extra-prepared-modules/01-messages.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/02. Как получить команду из текста.md",
+      "path": "course/extra-prepared-modules/02-command.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/03. Как Python отправляет запрос.md",
+      "path": "course/extra-prepared-modules/03-request.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/04. Собираем decide_live из знакомых функций.md",
+      "path": "course/extra-prepared-modules/04-decision.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/00. Как разобраться в готовых модулях.md",
+      "path": "course/extra-prepared-modules/README.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Термины на примерах нашего помощника.md",
+      "path": "course/terms.md"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Заключение. Что мы собрали и где это пригодится.md",
+      "path": "course/conclusion.md"
     }
   ],
   "lessons": [
@@ -389,6 +437,109 @@
         ]
       ],
       "archive_source": "Agent Harness Workshop/Уроки/05. Кодирующий агент/Материалы/lesson-05-04-verify.zip"
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Дополнительно. Посмотрим статистику запроса.md",
+      "path": "course/02-note-assistant/extra-usage.md",
+      "group": 2,
+      "number": 5,
+      "root": "lesson-02-extra-usage",
+      "title": "Дополнительно. Статистика запроса",
+      "targets": [
+        "format_usage"
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-extra-usage.zip",
+      "ready": true,
+      "optional": true
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Дополнительно. Запускаем модель из Python.md",
+      "path": "course/02-note-assistant/extra-local.md",
+      "group": 2,
+      "number": 6,
+      "root": "lesson-02-extra-local",
+      "title": "Дополнительно. Запускаем модель из Python",
+      "targets": [
+        [
+          "local_model.py",
+          "send_local"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/02. Ответ с моделью/Материалы/lesson-02-extra-local.zip",
+      "optional": true
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/01. Как подготовить задачу для модели.md",
+      "path": "course/extra-prepared-modules/01-messages.md",
+      "group": 6,
+      "number": 1,
+      "root": "lesson-extra-01-messages",
+      "title": "Как подготовить задачу для модели",
+      "targets": [
+        [
+          "decisions.py",
+          "build_decision_messages"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/Материалы/lesson-extra-01-messages.zip",
+      "optional": true,
+      "runtime_modules": []
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/02. Как получить команду из текста.md",
+      "path": "course/extra-prepared-modules/02-command.md",
+      "group": 6,
+      "number": 2,
+      "root": "lesson-extra-02-command",
+      "title": "Как получить команду из текста",
+      "targets": [
+        [
+          "decisions.py",
+          "parse_decision"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/Материалы/lesson-extra-02-command.zip",
+      "optional": true,
+      "runtime_modules": []
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/03. Как Python отправляет запрос.md",
+      "path": "course/extra-prepared-modules/03-request.md",
+      "group": 6,
+      "number": 3,
+      "root": "lesson-extra-03-request",
+      "title": "Как Python отправляет запрос",
+      "targets": [
+        [
+          "transport.py",
+          "request_json"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/Материалы/lesson-extra-03-request.zip",
+      "optional": true,
+      "runtime_modules": [
+        "configure_model.py"
+      ]
+    },
+    {
+      "source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/04. Собираем decide_live из знакомых функций.md",
+      "path": "course/extra-prepared-modules/04-decision.md",
+      "group": 6,
+      "number": 4,
+      "root": "lesson-extra-04-decision",
+      "title": "Собираем decide_live из знакомых функций",
+      "targets": [
+        [
+          "decisions.py",
+          "decide_live"
+        ]
+      ],
+      "archive_source": "Agent Harness Workshop/Уроки/Дополнительно. Готовые модули/Материалы/lesson-extra-04-decision.zip",
+      "optional": true,
+      "runtime_modules": [
+        "transport.py",
+        "configure_model.py"
+      ]
     }
   ]
 }

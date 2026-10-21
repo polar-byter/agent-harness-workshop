@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent
 
 
 def send_fixture(messages: list[dict]) -> dict:
-    """Read a prepared example, without sending a network request."""
+    """Читаем подготовленный ответ из файла без обращения к модели."""
     return json.loads((ROOT / 'data' / 'response.json').read_text(encoding='utf-8'))
 
 

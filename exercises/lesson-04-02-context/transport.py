@@ -1,4 +1,4 @@
-"""Connect the course functions to the reader's chosen model."""
+"""Подключаем функции курса к выбранной модели."""
 import json
 import os
 from pathlib import Path
@@ -64,7 +64,7 @@ def send_live(messages: list[dict]) -> dict:
     if not isinstance(messages, list):
         raise ValueError('send_live ожидает список сообщений, без обёртки в словарь')
     settings = read_connection()
-    # These backends accept the course's developer instructions as a system message.
+    # Эти подключения принимают инструкции developer в сообщении system.
     prepared = [dict(message, role='system') if message.get('role') == 'developer'
                 else dict(message) for message in messages]
     if settings['provider'] == 'ollama':

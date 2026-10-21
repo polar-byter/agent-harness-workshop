@@ -23,6 +23,10 @@
 | [Извлекаем текст из ответа сервиса](../course/02-note-assistant/02-response.md) | [lesson-02-02-response](lesson-02-02-response/README.md) | [TASK.md](lesson-02-02-response/TASK.md) |
 | [Соединяем запрос и ответ](../course/02-note-assistant/03-answer.md) | [lesson-02-03-answer](lesson-02-03-answer/README.md) | [TASK.md](lesson-02-03-answer/TASK.md) |
 
+Необязательно после подключения: [разбор send_live](../course/02-note-assistant/extra-send-live.md) и [статистика запроса](../course/02-note-assistant/extra-usage.md). У практики есть [отдельный каркас](lesson-02-extra-usage/README.md) и [подсказки](lesson-02-extra-usage/TASK.md).
+
+В конце раздела также можно пройти [локальный запуск без Ollama](../course/02-note-assistant/extra-local.md): [каркас](lesson-02-extra-local/README.md), [подсказки](lesson-02-extra-local/TASK.md). Этот опыт использует отдельное окружение и не меняет подключение остальных уроков.
+
 ## 03. Агент с инструментами
 
 | Урок | Исходники | Подсказки |
