@@ -11,7 +11,7 @@ def main():
     limits = {'steps': 4, 'tool_calls': 3}
     events = []
     while check_budget(state, limits):
-        command = decide_live('Найди заметки о Python', events)
+        command = decide_live('Найди в регламенте пункты о возврате', events)
         state['steps'] += 1
         print('Команда:', command)
         if command.get('type') == 'answer':

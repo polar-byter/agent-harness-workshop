@@ -14,15 +14,15 @@ class LessonTests(unittest.TestCase):
         (ROOT / "scratch").mkdir(exist_ok=True)
         path = ROOT / 'scratch' / 'combined.jsonl'
         path.write_text('', encoding='utf-8')
-        first = run_search(ROOT / 'data' / 'notes.txt', ' Python ', path)
+        first = run_search(ROOT / 'data' / 'notes.txt', ' возврат ', path)
         self.assertEqual(first['status'], 'found')
-        self.assertEqual(first['query'], 'Python')
-        self.assertEqual(len(first['matches']), 2)
+        self.assertEqual(first['query'], 'возврат')
+        self.assertEqual(len(first['matches']), 3)
         second = run_search(ROOT / 'data' / 'notes.txt', 'absent', path)
         self.assertEqual(second['status'], 'not_found')
         self.assertEqual([json.loads(line) for line in path.read_text(encoding='utf-8').splitlines()], [first, second])
         with self.assertRaises(FileNotFoundError):
-            run_search(ROOT / 'scratch' / 'missing.txt', 'python', path)
+            run_search(ROOT / 'scratch' / 'missing.txt', 'возврат', path)
 
 
 if __name__ == "__main__":

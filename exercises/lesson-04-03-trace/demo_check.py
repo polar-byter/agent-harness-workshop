@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     print('Учебный запуск без обращения к модели через сеть.')
     try:
-        events = [{'command': {'tool':'read_notes'}, 'result': {'notes':['Python lists']}}]
+        events = [{'command': {'tool':'read_notes'}, 'result': {'notes':['Возврат товара возможен в течение 14 дней.']}}]
         path = ROOT / 'trace.jsonl'
         save_events(path, events)
         result = path.read_text(encoding='utf-8')

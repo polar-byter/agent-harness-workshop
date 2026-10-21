@@ -3,8 +3,8 @@ from usage_client import request_sample
 
 
 def main():
-    question = 'Что заметки говорят о Python?'
-    notes = ['Python lists keep item order.']
+    question = 'Сколько дней есть на возврат товара?'
+    notes = ['Возврат товара возможен в течение 14 дней.']
     try:
         # Проверяем готовность функции до обращения к модели.
         format_usage({'input_tokens': 10, 'output_tokens': 0, 'cached_tokens': None})

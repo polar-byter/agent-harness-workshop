@@ -8,9 +8,9 @@ ROOT = Path(__file__).resolve().parent
 
 def main():
     cases = [
-        {'name': 'python', 'task': 'Найди заметки о Python. Если они найдены, ответь только found.',
+        {'name': 'возврат', 'task': 'Найди в регламенте пункты о возврате. Если они найдены, ответь только found.',
          'expected_status': 'completed', 'expected_answer': 'found'},
-        {'name': 'missing', 'task': 'Найди заметки по строке zzz_not_in_notes. Если совпадений нет, ответь только missing.',
+        {'name': 'missing', 'task': 'Найди в регламенте пункты по строке zzz_not_in_notes. Если совпадений нет, ответь только missing.',
          'expected_status': 'completed', 'expected_answer': 'missing'},
     ]
     def run(task):

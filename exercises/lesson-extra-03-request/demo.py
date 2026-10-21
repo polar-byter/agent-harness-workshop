@@ -5,8 +5,8 @@ from transport import send_live
 
 def main():
     try:
-        answer = answer_question('Что заметки говорят о Python?',
-                                 ['Python lists keep item order.'], send_live)
+        answer = answer_question('Сколько дней есть на возврат товара?',
+                                 ['Возврат товара возможен в течение 14 дней.'], send_live)
     except (NotImplementedError, ValueError) as error:
         print(error)
     else:

@@ -6,9 +6,9 @@ from transport import read_connection
 def main():
     settings = read_connection()
     print('Модель:', settings['model'])
-    print('Задача: Найди заметки о Python')
+    print('Задача: Найди в регламенте пункты о возврате')
     try:
-        command = decide_live('Найди заметки о Python', [])
+        command = decide_live('Найди в регламенте пункты о возврате', [])
     except (NotImplementedError, ValueError) as error:
         print(error)
     else:

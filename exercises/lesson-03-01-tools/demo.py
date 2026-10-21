@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    task = 'Найди заметки о Python. Сначала запроси инструмент find_notes с query python.'
+    task = 'Найди в регламенте пункты о возврате. Сначала запроси инструмент find_notes с query возврат.'
     command = decide_live(task, [])
     print('Команда модели:', command)
     if command.get('type') != 'tool':

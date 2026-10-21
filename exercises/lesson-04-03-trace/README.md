@@ -14,7 +14,7 @@
 
 После реализации ожидается:
 
-{"command": {"tool": "read_notes"}, "result": {"notes": ["Python lists"]}}
+{"command": {"tool": "read_notes"}, "result": {"notes": ["Возврат товара возможен в течение 14 дней."]}}
 
 Необязательная проверка: tests/test_lesson.py -> class LessonTests -> Run. Проверки этого архива относятся только к текущему заданию.
 

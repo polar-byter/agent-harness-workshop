@@ -14,7 +14,7 @@ class LessonTests(unittest.TestCase):
     def test_contract(self):
         (ROOT / "scratch").mkdir(exist_ok=True)
         path = ROOT / 'data' / 'notes.txt'
-        self.assertEqual(len(dispatch_tool({'tool':'find_notes','query':'python'}, path)['matches']), 2)
+        self.assertEqual(len(dispatch_tool({'tool':'find_notes','query':'возврат'}, path)['matches']), 3)
         self.assertEqual(len(dispatch_tool({'tool':'read_notes'}, path)['notes']), 6)
         for command in ({'tool':'delete'}, {'tool':'find_notes','query':5}):
             with self.assertRaises(ValueError):

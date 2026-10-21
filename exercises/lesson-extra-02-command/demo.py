@@ -8,7 +8,7 @@ from decisions import build_decision_messages, parse_decision
 def main():
     print('Учебная проверка без сети.')
     try:
-        text = '{"type":"tool","tool":"find_notes","query":"python"}'
+        text = '{"type":"tool","tool":"find_notes","query":"возврат"}'
         print('До разбора:', type(text))
         decision = parse_decision(text)
         print('После разбора:', type(decision))

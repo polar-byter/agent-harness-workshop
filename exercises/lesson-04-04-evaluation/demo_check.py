@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     print('Учебный запуск без обращения к модели через сеть.')
     try:
-        cases = [{'name':'Ответ','task':'Найди Python','expected_status':'completed','expected_answer':'Готово'},
+        cases = [{'name':'Ответ','task':'Найди пункты о возврате','expected_status':'completed','expected_answer':'Готово'},
                  {'name':'Остановка','task':'Повторяй','expected_status':'budget_limit','expected_answer':''}]
         def run(task):
             if task == 'Повторяй':

@@ -14,7 +14,7 @@
 
 После реализации ожидается:
 
-{'query': 'Python', 'status': 'found', 'matches': ['Python functions return values.', 'Python lists keep item order.']}
+{'query': 'возврат', 'status': 'found', 'matches': ['Возврат товара возможен в течение 14 дней.', 'ВОЗВРАТ денег производится на карту покупателя.', 'Для возврата нужен чек или номер заказа.']}
 
 Необязательная проверка: tests/test_lesson.py -> class LessonTests -> Run. Проверки этого архива относятся только к текущему заданию.
 

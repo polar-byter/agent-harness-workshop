@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     print('Учебный запуск без обращения к модели через сеть.')
     try:
-        result = select_context('Найди Python', [{'step':1},{'step':2},{'step':3}], 2)
+        result = select_context('Найди пункты о возврате', [{'step':1},{'step':2},{'step':3}], 2)
     except NotImplementedError as error:
         print(error)
     else:

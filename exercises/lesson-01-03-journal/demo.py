@@ -12,7 +12,7 @@ def main():
     print('Учебный запуск без обращения к модели через сеть.')
     try:
         path = ROOT / 'runs.jsonl'
-        write_result(path, {'query': 'python', 'matches': ['Python lists']})
+        write_result(path, {'query': 'возврат', 'matches': ['Возврат товара возможен в течение 14 дней.']})
         result = path.read_text(encoding='utf-8').splitlines()[-1]
     except NotImplementedError as error:
         print(error)

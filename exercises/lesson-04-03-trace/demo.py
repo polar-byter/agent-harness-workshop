@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    result = run_controlled('Найди заметки о Python', ROOT / 'data' / 'notes.txt',
+    result = run_controlled('Найди в регламенте пункты о возврате', ROOT / 'data' / 'notes.txt',
                             decide_live, {'steps': 4, 'tool_calls': 3})
     print(result)
 

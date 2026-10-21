@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent
 def main():
     print('Учебный запуск без обращения к модели через сеть.')
     try:
-        result = answer_question('Что заметки говорят о Python?', ['Python lists keep item order.'], send_fixture)
+        result = answer_question('Сколько дней есть на возврат товара?', ['Возврат товара возможен в течение 14 дней.'], send_fixture)
     except NotImplementedError as error:
         print(error)
     else:

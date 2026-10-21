@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import textwrap
 import unicodedata
 from urllib.parse import unquote, urlsplit
 from zipfile import ZipFile
@@ -27,7 +28,8 @@ def main():
         assert not re.search(r'\[\[[\w][^\]\n]*\]\]',text),(path,'Obsidian link remains')
         assert text.count('```')%2==0,path
         for code in re.findall(r'```python\n(.*?)```',text,re.S):
-            ast.parse(code,filename=str(path))
+            # Заготовки уроков показывают тело функции с отступом.
+            ast.parse(textwrap.dedent(code),filename=str(path))
         destinations=re.findall(r'(?<!!)\[[^\]]*\]\(([^)]+)\)',text)+re.findall(r'<img[^>]+src="([^"]+)"',text)
         for destination in destinations:
             url=urlsplit(destination)
@@ -72,7 +74,7 @@ def main():
                 env=dict(os.environ,PYTHONIOENCODING='utf-8',PYTHONDONTWRITEBYTECODE='1'),
                 capture_output=True,text=True,encoding='utf-8',timeout=15)
             assert result.returncode==0,(lesson['root'],result.stdout,result.stderr)
-            expected = 'Списки Python сохраняют порядок элементов.' if lesson.get('ready') else 'Допишите'
+            expected = 'Вернуть товар можно в течение 14 дней.' if lesson.get('ready') else 'Допишите'
             assert expected in result.stdout,(lesson['root'],result.stdout)
         if lesson['group'] >= 3 or lesson.get('ready'):
             runtime=ROOT/'tools/model_runtime'

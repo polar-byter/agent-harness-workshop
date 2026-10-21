@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parent
 
 
 def main():
-    result = run_agent('Найди заметки о Python', ROOT / 'data' / 'notes.txt', decide_live)
+    result = run_agent('Найди в регламенте пункты о возврате', ROOT / 'data' / 'notes.txt', decide_live)
     for event in result.get('events', []):
         print(event)
     print(result)
