@@ -9,6 +9,7 @@ import shutil
 import subprocess
 import sys
 import tempfile
+import unicodedata
 from urllib.parse import unquote, urlsplit
 from zipfile import ZipFile
 
@@ -21,6 +22,8 @@ def main():
     links=0
     for path in files:
         text=path.read_text(encoding='utf-8')
+        special_punctuation=sorted({char for char in text if ord(char)>127 and unicodedata.category(char)[0] in 'PSZ'})
+        assert not special_punctuation,(path,'Use plain keyboard punctuation',special_punctuation)
         assert not re.search(r'\[\[[\w][^\]\n]*\]\]',text),(path,'Obsidian link remains')
         assert text.count('```')%2==0,path
         for code in re.findall(r'```python\n(.*?)```',text,re.S):
