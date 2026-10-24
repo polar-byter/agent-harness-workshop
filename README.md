@@ -45,6 +45,6 @@
 <details>
 <summary>Для сопровождения курса</summary>
 
-[Правила редактирования](AGENTS.md) / [Обновление из Obsidian](maintainer/README.md) / [Журнал выполненной работы](maintainer/WORK_LOG.md)
+[Обновление из Obsidian](maintainer/README.md)
 
 </details>
